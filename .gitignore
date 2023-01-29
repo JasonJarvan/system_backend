@@ -1,0 +1,8 @@
+/node_modules
+/tools/generateMenu/routes.js
+/package-lock.json
+/env/.env.local
+reactION-config.json
+test*
+package-lock
+.vscode

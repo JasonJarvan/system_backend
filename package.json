@@ -1,0 +1,58 @@
+{
+  "name": "middle-platform-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
+    "local": "cross-env NODE_ENV=local nodemon src/index.js",
+    "test": "cross-env NODE_ENV=test nodemon src/index.js",
+    "qas": "cross-env NODE_ENV=qas npm run start",
+    "start": "node src/index.js",
+    "start:prod": "cross-env NODE_ENV=prod node src/index.js",
+    "start:pm2": "pm2 start ecosystem.config.js --only middle-backend",
+    "qas:pm2": "pm2 start ecosystem.config.js --env qas --only middle-backend",
+    "deskin:pm2": "pm2 start ecosystem.config.js --env deskin --only middle-backend",
+    "cron": "pm2 start ecosystem.config.js --only count-cron",
+    "cron:local": "pm2 start ecosystem.config.js --only count-cron --env local"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.zuler.sh/zuler/micro-service/middle-platform-backend"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/proto-loader": "^0.6.13",
+    "axios": "^0.23.0",
+    "bcrypt": "^5.0.1",
+    "cheerio": "^1.0.0-rc.10",
+    "cors": "^2.8.5",
+    "csvtojson": "^2.0.10",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-jwt": "^6.1.0",
+    "express-rate-limit": "^5.3.0",
+    "express-validator": "^6.13.0",
+    "forever": "^0.10.10",
+    "form-data": "^4.0.0",
+    "fs-extra": "^10.0.0",
+    "grpc": "^1.24.11",
+    "ioredis": "^4.27.9",
+    "lodash": "^4.17.21",
+    "log4js": "^6.3.0",
+    "moment": "^2.29.1",
+    "mongodb": "3.4.1",
+    "multer": "^1.4.3",
+    "mysql": "^2.18.1",
+    "nacos": "^2.4.0",
+    "node-cron": "^3.0.0",
+    "ssh2-sftp-client": "^7.1.0",
+    "tencentcloud-sdk-nodejs": "^4.0.323"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^8.16.0",
+    "nodemon": "^2.0.12"
+  }
+}

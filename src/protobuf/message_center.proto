@@ -1,0 +1,13 @@
+syntax = "proto3";
+package services;
+
+service Consumer {
+  rpc updateAllConsumer(updateAllConsumerRequest) returns (updateResponse) {}
+  rpc updateConsumer(updateConsumerRequest) returns (updateResponse) {}
+}
+message updateAllConsumerRequest {}
+message updateConsumerRequest { int32 id = 1; }
+message updateResponse {
+  int32 code = 1;
+  string data = 2;
+}
